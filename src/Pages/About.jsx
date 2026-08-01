@@ -229,7 +229,7 @@ const AboutPage = () => {
                 data-aos-duration="1300"
                 itemProp="name"
               >
-                Eki Zulfar Rachman
+                Fatih Faudzan Achyadi
               </span>
             </h2>
             
@@ -238,8 +238,7 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-        Saya adalah mahasiswa Teknik Informatika yang berfokus pada pengembangan Front-End. 
-Saya berfokus pada penciptaan pengalaman digital yang menarik dan selalu berupaya memberikan solusi terbaik dalam setiap proyek yang saya kerjakan.
+        Saya adalah mahasiswa Teknik Jaringan Komputer dan Telekomunikasi yang berfokus pada jaringan komputer, administrasi server, dan keamanan jaringan. Saya memiliki ketertarikan dalam membangun infrastruktur IT yang aman, stabil, dan efisien serta selalu berupaya memberikan solusi terbaik dalam setiap proyek yang saya kerjakan.
                   </p>
 
                {/* Quote Section */}
