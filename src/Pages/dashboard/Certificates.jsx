@@ -22,33 +22,61 @@ const SkeletonCard = () => (
 
 const CertCard = ({ cert, onDelete }) => {
   const [imgLoaded, setImgLoaded] = useState(false)
+  const [previewOpen, setPreviewOpen] = useState(false)
 
   return (
-    <div className="relative group">
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-2xl blur opacity-10 group-hover:opacity-30 transition duration-500" />
-      <div className="relative bg-white/5 border border-white/12 rounded-2xl overflow-hidden">
-        {/* Skeleton shown until image loads */}
-        {!imgLoaded && (
-          <div className="w-full aspect-[16/11.5] bg-white/5 animate-pulse" />
-        )}
-        <img
-          src={cert.Img}
-          alt="Certificate"
-          onLoad={() => setImgLoaded(true)}
-          className={`w-full aspect-[16/11.5] object-cover group-hover:scale-105 transition-transform duration-500 ${imgLoaded ? 'block' : 'hidden'}`}
-        />
-        {imgLoaded && (
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-            <button
-              onClick={() => onDelete(cert.id)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-500/20 border border-red-500/30 text-red-300 text-xs w-full justify-center hover:bg-red-500/30 transition-colors"
-            >
-              <Trash2 className="w-3 h-3" /> Delete
-            </button>
-          </div>
-        )}
+    <>
+      <div className="relative group">
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-2xl blur opacity-10 group-hover:opacity-30 transition duration-500" />
+        <div className="relative bg-white/5 border border-white/12 rounded-2xl overflow-hidden">
+          {/* Skeleton shown until image loads */}
+          {!imgLoaded && (
+            <div className="w-full aspect-[16/11.5] bg-white/5 animate-pulse" />
+          )}
+          <img
+            src={cert.Img}
+            alt="Certificate"
+            onLoad={() => setImgLoaded(true)}
+            onClick={() => setPreviewOpen(true)}
+            className={`w-full aspect-[16/11.5] object-cover group-hover:scale-105 transition-transform duration-500 ${imgLoaded ? 'block' : 'hidden'} cursor-pointer`}
+          />
+          {imgLoaded && (
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
+              <button
+                onClick={() => onDelete(cert.id)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-500/20 border border-red-500/30 text-red-300 text-xs w-full justify-center hover:bg-red-500/30 transition-colors"
+              >
+                <Trash2 className="w-3 h-3" /> Delete
+              </button>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+
+      {previewOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4 py-6"
+          onClick={() => setPreviewOpen(false)}
+        >
+          <div
+            className="relative max-w-[90vw] max-h-[90vh] w-full overflow-hidden rounded-3xl bg-black"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setPreviewOpen(false)}
+              className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20"
+            >
+              ✕
+            </button>
+            <img
+              src={cert.Img}
+              alt="Certificate preview"
+              className="h-full w-full max-h-[90vh] object-contain"
+            />
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 
