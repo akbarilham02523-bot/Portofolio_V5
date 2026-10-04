@@ -64,7 +64,7 @@ const MainTitle = memo(() => (
       <span className="relative inline-block mt-2">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
         <span className="relative bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
-          Engineer
+          Enthusiast
         </span>
       </span>
     </h1>
@@ -108,7 +108,7 @@ const SocialLink = memo(({ icon: Icon, link, label }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Network & Telecom Student", "Tech Enthusiast"];
+const WORDS = ["Tech Enthusiast", "Network Enthusiast"];
 const TECH_STACK = ["MikroTik", "Cisco", "Windows Server", "VirtualBox"];
 const SOCIAL_LINKS = [
   { icon: Youtube, link: "https://youtube.com/@Xeltschmerz", label: "YouTube Profile" },
@@ -176,12 +176,12 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Fatih Faudzan Achyadi — Network Engineer</title>
-        <meta name="description" content="Website resmi Fatih Faudzan Achyadi, Network Engineer. Merancang, mengelola, dan mengoptimalkan jaringan komputer serta infrastruktur IT yang aman, stabil, dan efisien." />
+        <title>Fatih Faudzan Achyadi — Network Enthusiast</title>
+        <meta name="description" content="Website resmi Fatih Faudzan Achyadi, Network Enthusiast. Merancang, mengelola, dan mengoptimalkan jaringan komputer serta infrastruktur IT yang aman, stabil, dan efisien." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://djabenk.net" />
-        <meta property="og:title" content="Fatih Faudzan Achyadi — Network Engineer" />
-        <meta property="og:description" content="Website resmi dan portofolio Fatih Faudzan Achyadi, Network Engineer." />
+        <meta property="og:title" content="Fatih Faudzan Achyadi — Network Enthusiast" />
+        <meta property="og:description" content="Website resmi dan portofolio Fatih Faudzan Achyadi, Network Enthusiast." />
         <meta property="og:url" content="https://djabenk.net" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{`
@@ -189,7 +189,7 @@ const Home = () => {
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Fatih Faudzan Achyadi",
-            "jobTitle": "Network Engineer",
+            "jobTitle": "Network Enthusiast",
             "url": "https://djabenk.net",
             "sameAs": [
               "https://youtube.com/@Xeltschmerz",

@@ -167,7 +167,7 @@ const ProjectDetails = () => {
           content={
             project.Description
               ? project.Description.slice(0, 155)
-              : `Project ${project.Title} oleh DJabenk — Network Engineer.`
+              : `Project ${project.Title} oleh DJabenk — Network Enthusiast.`
           }
         />
         <meta name="robots" content="index, follow" />

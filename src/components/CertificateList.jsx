@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import { supabase } from "../supabase";
 import Certificate from "./Certificate";
 
-const DEFAULT_CERTIFICATES = [{ id: "fallback-sertifikat", Img: "/sertifikat1.jpg" }];
+const DEFAULT_CERTIFICATES = [
+  { id: "fallback-sertifikat-1", Img: "/sertifikat1.jpg" },
+  { id: "fallback-sertifikat-2", Img: "/sertifikat2.jpg" },
+  { id: "fallback-sertifikat-3", Img: "/sertifikat3.jpg" },
+  { id: "fallback-sertifikat-4", Img: "/sertifikat4.jpg" }
+];
 
 const CertificateList = () => {
   const [certificates, setCertificates] = useState([]);
